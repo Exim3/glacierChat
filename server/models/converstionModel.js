@@ -6,15 +6,14 @@ const conversationSchema = new mongoose.Schema(
     messages: [
       {
         type: mongoose.Schema.Types.ObjectId,
-
         ref: "MessageModel",
         default: [],
-        strictPopulate: false,
       },
     ],
   },
-  //createdAt , updatedAt
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
 const ConversationModel = mongoose.model("Conversation", conversationSchema);
